@@ -1,0 +1,44 @@
+﻿@model ERP_C.Models.ViewModels.Login
+
+<h1>IniciarSesion</h1>
+
+<h4>IniciarSesion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="IniciarSesion">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Recordar" />
+                    <span asp-validation-for="Recordar" class="text-danger"></span>
+                    <span>@Html.DisplayNameFor(model => model.Recordar)</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

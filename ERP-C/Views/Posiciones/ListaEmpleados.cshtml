@@ -1,0 +1,29 @@
+﻿@model List<ERP_C.Models.Posicion>
+
+<h2>Listado de Empleados</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sueldo</th>
+            <th>Apellido</th>
+            <th>Nombre</th>
+            <th>Nombre de la Posición</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var posicion in Model)
+        {
+            <tr>
+                <td>@posicion.Sueldo</td>
+                <td>@posicion.Empleado.Apellido</td>
+                <td>@posicion.Nombre</td>
+                <td>@posicion.Nombre</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

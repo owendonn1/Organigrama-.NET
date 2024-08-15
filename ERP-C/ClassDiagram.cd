@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ERP_C.Models.CentroDeCosto">
+    <Position X="15.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAIAAAAAAAgAAAQAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CentroDeCosto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Gerencia" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Gastos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ERP_C.Models.Empleado">
+    <Position X="4.75" Y="6.5" Width="1.5" />
+    <AssociationLine Name="Posicion" Type="ERP_C.Models.Posicion" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="8" />
+        <Point X="11.25" Y="8" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Telefono" Type="ERP_C.Models.Telefono" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="6.851" />
+        <Point X="6.625" Y="6.851" />
+        <Point X="6.625" Y="5.267" />
+        <Point X="8.25" Y="5.267" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAKAAAAAAABAAAAAgAAAAgAAQAQgAAAAA=</HashCode>
+      <FileName>Models\Empleado.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Posicion" />
+      <Property Name="Telefono" />
+      <Property Name="Foto" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Gastos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ERP_C.Models.Empresa">
+    <Position X="8" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAAAAIACAIAAAgAwAAAAAgAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Models\Empresa.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Foto" />
+      <Property Name="TelefonoContacto" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ERP_C.Models.Foto">
+    <Position X="1.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Foto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ERP_C.Models.Gasto">
+    <Position X="7.25" Y="10.5" Width="1.5" />
+    <AssociationLine Name="Empleado" Type="ERP_C.Models.Empleado" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="12.188" />
+        <Point X="5.062" Y="12.188" />
+        <Point X="5.062" Y="8.31" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAABCAAAAAAEAAABAAAAJAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Gasto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CentroDeCosto" />
+      <Property Name="Empleado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ERP_C.Models.Gerencia">
+    <Position X="14.25" Y="3.75" Width="3.25" />
+    <AssociationLine Name="Responsable" Type="ERP_C.Models.Posicion" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.75" Y="5.815" />
+        <Point X="15.75" Y="8.07" />
+        <Point X="12.75" Y="8.07" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Empresa" Type="ERP_C.Models.Empresa" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.875" Y="3.75" />
+        <Point X="14.875" Y="1.725" />
+        <Point X="10.25" Y="1.725" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="SubGerencias" Type="ERP_C.Models.Gerencia" ManuallyRouted="true">
+      <Path>
+        <Point X="17.5" Y="4.475" />
+        <Point X="18.351" Y="4.475" />
+        <Point X="18.351" Y="5.105" />
+        <Point X="17.5" Y="5.105" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.151" Y="0.076" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Posiciones" Type="ERP_C.Models.Posicion" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="5.688" />
+        <Point X="13.875" Y="5.688" />
+        <Point X="13.875" Y="7.188" />
+        <Point X="12.75" Y="7.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="GerenciaSuperior" Type="ERP_C.Models.Gerencia" ManuallyRouted="true">
+      <Path>
+        <Point X="15.383" Y="3.75" />
+        <Point X="15.383" Y="2.897" />
+        <Point X="16.39" Y="2.897" />
+        <Point X="16.39" Y="3.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.444" Y="0.557" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABACAAiAAIAAAAAAACJAgAAAAAAACAACAAAAAABAAAA=</HashCode>
+      <FileName>Models\Gerencia.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Responsable" />
+      <Property Name="Empresa" />
+      <Property Name="CentroDeCosto" />
+      <Property Name="GerenciaSuperior" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SubGerencias" />
+      <Property Name="Posiciones" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ERP_C.Models.Persona">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAEEACAAgAAAAAEAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ERP_C.Models.Posicion">
+    <Position X="11.25" Y="7" Width="1.5" />
+    <AssociationLine Name="Empleado" Type="ERP_C.Models.Empleado" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="7.625" />
+        <Point X="6.25" Y="7.625" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Empleados" Type="ERP_C.Models.Posicion">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.123" Y="0.402" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Jefe" Type="ERP_C.Models.Posicion" ManuallyRouted="true">
+      <Path>
+        <Point X="11.782" Y="7" />
+        <Point X="11.782" Y="6.318" />
+        <Point X="12.228" Y="6.318" />
+        <Point X="12.228" Y="7" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAABAAAIAAAAAAABAgAABQAAACIAAAAAAQAAAAAA=</HashCode>
+      <FileName>Models\Posicion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Empleado" />
+      <Property Name="Gerencia" />
+      <Property Name="Jefe" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Empleados" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ERP_C.Models.Telefono">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAQAAAAAAAAAAABAAI=</HashCode>
+      <FileName>Models\Telefono.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TipoTelefono" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ERP_C.Models.TipoTelefono">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAAAAAgAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Models\TipoTelefono.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Telefono" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

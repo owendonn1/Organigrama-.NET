@@ -1,0 +1,25 @@
+﻿@model List<ERP_C.Models.ViewModels.GerenciasMontos>
+
+<h2>Listado de Montos Totales por Gerencia</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Gerencia</th>
+            <th>Monto Total de Gastos</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var centroDeCosto in Model)
+        {
+            <tr>
+                <td>@centroDeCosto.Gerencia.Nombre</td>
+                <td>@centroDeCosto.montoTotal.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

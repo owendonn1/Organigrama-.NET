@@ -1,0 +1,31 @@
+﻿@model List<Gasto>
+
+<h2>Listado de Todos los Gastos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Empleado</th>
+            <th>Centro de Costo</th>
+            <th>Descripción</th>
+            <th>Monto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gasto in Model)
+        {
+            <tr>
+                <td>@gasto.Fecha.ToString("yyyy/MM/dd HH:mm")</td>
+                <td>@($"{gasto.Empleado.Nombre} {gasto.Empleado.Apellido}")</td>
+                <td>@gasto.CentroDeCosto.Nombre</td>
+                <td>@gasto.Descripcion</td>
+                <td>@gasto.Monto.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
